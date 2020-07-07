@@ -1,24 +1,8 @@
-# battleship
+# Battleship
+[The Odin Project](https://www.theodinproject.com/) - [Project Battleship](https://www.theodinproject.com/courses/javascript/lessons/battleship).
 
-## Project setup
-```
-npm install
-```
+## Acknowledgement
+This project was made posible thanks to [The Odin Project](https://www.theodinproject.com/).
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## License
+[MIT](https://mit-license.org/).
