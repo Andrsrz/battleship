@@ -6,4 +6,8 @@ describe("hit()", () => {
 	test("Contains the position that have been just hitted.", () => {
 		expect(myShip.hit(0)).toContain(0);
 	});
+
+	test("The position exits within the ship (Size match)", () => {
+		expect(myShip.hit(7)).toBeFalsy();
+	});
 });

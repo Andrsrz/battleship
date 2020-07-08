@@ -7,6 +7,10 @@ class Ship{
 	}
 
 	hit(pos){
+		if(pos > this.size)
+			return false;
+
+		/* Success */
 		this.hits.push(pos);
 		return this.hits;
 	}
