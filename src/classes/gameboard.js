@@ -19,6 +19,9 @@ class Gameboard{
 		this.ships.push(this.submarine2);
 	}
 
+	/* We want to know if all the ships are sunk
+	 * to finish the game. Iterate through our ships
+	 * array and check wether or not the ship is sunk. */
 	allSunk(){
 		for(let i = 0; i < this.ships.length; i++){
 			if(this.ships[i].isSunk() === false)
