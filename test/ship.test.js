@@ -22,4 +22,15 @@ describe("isSunk()", () => {
 	test("Ship without hits is not sunk", () => {
 		expect(myShip.isSunk()).toBeFalsy();
 	});
+
+	test("Ship with hits is not sunk", () => {
+		myShip.hit(0);
+		expect(myShip.isSunk()).toBeFalsy();
+	});
+
+	test("Ship with all positions hitted is sunk", () => {
+		myShip.hit(1);
+		myShip.hit(2);
+		expect(myShip.isSunk()).toBeTruthy();
+	});
 });
