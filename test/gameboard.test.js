@@ -39,6 +39,8 @@ describe("allSunk()", () => {
 		expect(myGameboard.allSunk()).toBeFalsy();
 	});
 
+	/* Hit every ship's position to check the expected
+	 * output. */
 	test("All ships are sunk", () => {
 		for(let i = 0; i < myGameboard.ships.length; i++){
 			for(let j = 0; j < myGameboard.ships[i].size; j++){
