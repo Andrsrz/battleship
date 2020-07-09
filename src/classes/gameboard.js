@@ -14,7 +14,7 @@ class Gameboard{
 			['I1', 'I2', 'I3', 'I4', 'I5', 'I6', 'I7', 'I8', 'I9', 'I10'],
 			['J1', 'J2', 'J3', 'J4', 'J5', 'J6', 'J7', 'J8', 'J9', 'J10']
 		];
-		this.aircraft = new Ship('ACrcraft Carrier', 5);
+		this.aircraft = new Ship('Aircraft Carrier', 5);
 		this.battleship = new Ship('Battleship', 4);
 		this.cruiser = new Ship('Cruiser', 3);
 		this.destroyer1 = new Ship('Destroyer', 2);
