@@ -14,6 +14,13 @@ class Ship{
 		this.hits.push(pos);
 		return this.hits;
 	}
+
+	isSunk(){
+		if(this.size === this.hits.length)
+			return true;
+		else
+			return false;
+	}
 }
 
 export { Ship };
