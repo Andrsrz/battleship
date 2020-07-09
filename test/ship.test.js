@@ -10,4 +10,16 @@ describe("hit()", () => {
 	test("The position exists within the ship (Size match)", () => {
 		expect(myShip.hit(7)).toBeFalsy();
 	});
+
+	test("Another hit", () => {
+		expect(myShip.hit(4)).toContain(0, 4);
+	});
+});
+
+describe("isSunk()", () => {
+	let myShip = new Ship('Cruiser', 3);
+
+	test("Ship without hits is not sunk", () => {
+		expect(myShip.isSunk()).toBeFalsy();
+	});
 });
