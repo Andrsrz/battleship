@@ -3,6 +3,9 @@ import { Ship } from '../src/classes/ship';
 describe("hit()", () => {
 	let myShip = new Ship('Aircraft Carrier', 5);
 
+	/* We want to know if the position hitted is actually
+	 * tracked in our Ship object. */
+
 	test("Contains the position that have been just hitted.", () => {
 		expect(myShip.hit(0)).toContain(0);
 	});
@@ -18,6 +21,9 @@ describe("hit()", () => {
 
 describe("isSunk()", () => {
 	let myShip = new Ship('Cruiser', 3);
+
+	/* We want to know wether or not our ship is no longer in
+	 * the game. */
 
 	test("Ship without hits is not sunk", () => {
 		expect(myShip.isSunk()).toBeFalsy();

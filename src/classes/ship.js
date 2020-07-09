@@ -6,6 +6,7 @@ class Ship{
 		this.hits = [];
 	}
 
+	/* To track record of the hits to our ship. */
 	hit(pos){
 		if(pos > this.size)
 			return false;
@@ -15,6 +16,7 @@ class Ship{
 		return this.hits;
 	}
 
+	/* To track is the ship is no longer in the game. */
 	isSunk(){
 		if(this.size === this.hits.length)
 			return true;
