@@ -18,6 +18,14 @@ class Gameboard{
 		this.ships.push(this.submarine1);
 		this.ships.push(this.submarine2);
 	}
+
+	allSunk(){
+		for(let i = 0; i < this.ships.length; i++){
+			if(this.ships[i].isSunk() === false)
+				return false;
+		}
+		return true;
+	}
 }
 
 export { Gameboard };

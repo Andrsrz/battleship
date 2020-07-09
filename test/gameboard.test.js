@@ -31,3 +31,20 @@ describe("Create Gameboard", () => {
 		expect(Submarine).toMatchObject(myGameboard.ships[6]);
 	});
 });
+
+describe("allSunk()", () => {
+	let myGameboard = new Gameboard();
+
+	test("All ships are not sunk", () => {
+		expect(myGameboard.allSunk()).toBeFalsy();
+	});
+
+	test("All ships are sunk", () => {
+		for(let i = 0; i < myGameboard.ships.length; i++){
+			for(let j = 0; j < myGameboard.ships[i].size; j++){
+				myGameboard.ships[i].hit(j);
+			}
+		}
+		expect(myGameboard.allSunk()).toBeTruthy();
+	});
+});
