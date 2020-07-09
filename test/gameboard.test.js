@@ -7,6 +7,7 @@ describe("Create Gameboard", () => {
 	const Battleship = new Ship('Battleship', 4);
 	const Cruiser = new Ship('Cruiser', 3);
 	const Destroyer = new Ship('Destroyer', 2);
+	const Submarine = new Ship('Submarine', 1);
 
 	test("Gameboard has an Aircraft Carrier", () => {
 		expect(AircraftCarrier).toMatchObject(myGameboard.ships[0]);
@@ -23,5 +24,10 @@ describe("Create Gameboard", () => {
 	test("Gameboard has two Destroyers", () => {
 		expect(Destroyer).toMatchObject(myGameboard.ships[3]);
 		expect(Destroyer).toMatchObject(myGameboard.ships[4]);
+	});
+
+	test("Gameboard has two Submarines", () => {
+		expect(Submarine).toMatchObject(myGameboard.ships[5]);
+		expect(Submarine).toMatchObject(myGameboard.ships[6]);
 	});
 });
