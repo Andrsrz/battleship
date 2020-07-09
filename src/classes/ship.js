@@ -4,6 +4,7 @@ class Ship{
 		this.size = size ? size : 0;
 		this.sunk = false;
 		this.hits = [];
+		this.position = [];
 	}
 
 	/* To track record of the hits to our ship. */
