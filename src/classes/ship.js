@@ -24,6 +24,19 @@ class Ship{
 		else
 			return false;
 	}
+
+	/*  */
+	fillPosition(initCoord, finalCoord){
+		let initLetter = initCoord.slice(0, 1);
+		let initNum = initCoord.slice(1, 2);
+		let finalLetter = finalCoord.slice(0, 1);
+		let finalNum = finalCoord.slice(1, 2);
+
+		if(initLetter === finalLetter || initNum === finalNum)
+			return true;
+		else
+			return false;
+	}
 }
 
 export { Ship };
