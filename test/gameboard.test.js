@@ -50,3 +50,11 @@ describe("allSunk()", () => {
 		expect(myGameboard.allSunk()).toBeTruthy();
 	});
 });
+
+describe("receiveAttack()", () => {
+	let myGameboard = new Gameboard();
+
+	test("Attack missed (Ships without stablished position)", () => {
+		expect(myGameboard.receiveAttack('G5')).toMatch(new RegExp('/'));
+	});
+});

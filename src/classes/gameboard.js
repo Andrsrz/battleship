@@ -30,17 +30,30 @@ class Gameboard{
 		this.ships.push(this.submarine1);
 		this.ships.push(this.submarine2);
 		this.missedHits = [];
+		this.hits = [];
 	}
 
-	/* We want to know if all the ships are sunk
-	 * to finish the game. Iterate through our ships
-	 * array and check wether or not the ship is sunk. */
+	/* We want to know if all the ships are sunk to finish the game. Iterate
+	 * through our ships array and check wether or not the ship is sunk. */
 	allSunk(){
 		for(let i = 0; i < this.ships.length; i++){
 			if(this.ships[i].isSunk() === false)
 				return false;
 		}
 		return true;
+	}
+
+	/* To receive an attack from the oponent we need to check wheter the
+	 * position is empty or has a ship in it. */
+	receiveAttack(coordinates){
+		/* Check every ship coordinates */
+		for(let shipIter = 0; shipIter < this.ships.length; shipIter++){
+			for(let coord = 0; coord < this.ships[shipIter].position.length; coord++){
+				if(coordinates === this.ships[shipIter].position)
+					return 'X';
+			}
+		}
+		return '/';
 	}
 }
 
