@@ -47,4 +47,8 @@ describe("fillPosition", () => {
 	test("Same letter", () => {
 		expect(myShip.fillPosition("A3", "A6")).toBeTruthy();
 	});
+
+	test("Same number", () => {
+		expect(myShip.fillPosition("B4", "D4")).toBeTruthy();
+	});
 });

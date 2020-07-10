@@ -25,14 +25,21 @@ class Ship{
 			return false;
 	}
 
-	/*  */
-	fillPosition(initCoord, finalCoord){
+	_checkValidDirection(initCoord, finalCoord){
 		let initLetter = initCoord.slice(0, 1);
 		let initNum = initCoord.slice(1, 2);
 		let finalLetter = finalCoord.slice(0, 1);
 		let finalNum = finalCoord.slice(1, 2);
 
 		if(initLetter === finalLetter || initNum === finalNum)
+			return true;
+		else
+			return false;
+	}
+
+	/*  */
+	fillPosition(initCoord, finalCoord){
+		if(this._checkValidDirection(initCoord, finalCoord))
 			return true;
 		else
 			return false;
