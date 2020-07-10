@@ -25,6 +25,9 @@ class Ship{
 			return false;
 	}
 
+	/* The rule goes as follow: The ship needs to be positioned horizontal or
+	 * vertical. So we check if the passed coordinates have the same letter or
+	 * the same number. */
 	_checkValidDirection(initCoord, finalCoord){
 		let initLetter = initCoord.slice(0, 1);
 		let initNum = initCoord.slice(1, 2);
