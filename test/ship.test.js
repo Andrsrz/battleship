@@ -44,11 +44,11 @@ describe("isSunk()", () => {
 describe("fillPosition", () => {
 	let myShip = new Ship('Aircraft Carrier', 5);
 
-	test("Same letter", () => {
+	test("Same letter (no checking valid ship size)", () => {
 		expect(myShip.fillPosition("A3", "A6")).toBeTruthy();
 	});
 
-	test("Same number", () => {
+	test("Same number (no checking valid ship size)", () => {
 		expect(myShip.fillPosition("B4", "D4")).toBeTruthy();
 	});
 });
