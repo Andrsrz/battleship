@@ -31,10 +31,7 @@ class Ship{
 	_checkValidShipSize(initLetter, initNum, finalLetter, finalNum){
 		if(finalNum - initNum === this.size - 1
 			|| finalLetter.charCodeAt(0) - initLetter.charCodeAt(0) === this.size - 1){
-			if(this._checkValidDirection(initLetter, initNum, finalLetter, finalNum))
-				return true;
-			else
-				return false;
+			return this._checkValidDirection(initLetter, initNum, finalLetter, finalNum);
 		}else{
 			return false;
 		}
@@ -44,10 +41,13 @@ class Ship{
 	 * vertical. So we check if the passed coordinates have the same letter or
 	 * the same number. */
 	_checkValidDirection(initLetter, initNum, finalLetter, finalNum){
-		if(initLetter === finalLetter || initNum === finalNum)
-			return true;
-		else
+		if(initLetter === finalLetter){
+			return "Horizontal";
+		}else if(initNum === finalNum){
+			return "Vertical";
+		}else{
 			return false;
+		}
 	}
 
 	/*  */
@@ -56,11 +56,15 @@ class Ship{
 		let initNum = initCoord.slice(1, 2);
 		let finalLetter = finalCoord.slice(0, 1);
 		let finalNum = finalCoord.slice(1, 2);
+		let direction = this._checkValidShipSize(initLetter, initNum, finalLetter, finalNum);
 
-		if(this._checkValidShipSize(initLetter, initNum, finalLetter, finalNum))
-			return true;
-		else
-			return false;
+		if(direction === "Horizontal"){
+			for(let i = 0; i < this.size; i++){
+				this.position.push(initLetter + (Number(initNum) + i));
+			}
+		}
+
+		return this.position;
 	}
 }
 

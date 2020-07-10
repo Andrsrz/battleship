@@ -44,7 +44,7 @@ describe("isSunk()", () => {
 describe("fillPosition", () => {
 	let myShip = new Ship('Aircraft Carrier', 5);
 
-	test("Check valid ship size (checking valid direction)", () => {
-		expect(myShip.fillPosition("F3", "F7")).toBeTruthy();
+	test("Position filled correctly Horizontal (checking valid ship size and direction)", () => {
+		expect(myShip.fillPosition('F3', 'F7')).toStrictEqual(['F3', 'F4', 'F5', 'F6', 'F7']);
 	});
 });
