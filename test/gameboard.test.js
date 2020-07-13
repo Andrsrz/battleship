@@ -58,8 +58,13 @@ describe("receiveAttack()", () => {
 		expect(myGameboard.receiveAttack('G5')).toMatch('/');
 	});
 
-	test("Attack (Ships with stablished position)", () => {
+	test("Attack (Ships with horizontal position)", () => {
 		myGameboard.aircraft.fillPosition('A3', 'A7');
 		expect(myGameboard.receiveAttack('A5')).toMatch('X');
+	});
+
+	test("Attack (Ships with vertical position)", () => {
+		myGameboard.cruiser.fillPosition('C3', 'E3');
+		expect(myGameboard.receiveAttack('D3')).toMatch('X');
 	});
 });
