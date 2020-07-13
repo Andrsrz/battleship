@@ -1,4 +1,4 @@
-import { Ship } from '../src/classes/ship';
+import { Ship } from '../../src/classes/ship';
 
 describe("hit()", () => {
 	let myShip = new Ship('Aircraft Carrier', 5);

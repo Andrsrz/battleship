@@ -1,5 +1,5 @@
-import { Ship } from '../src/classes/ship';
-import { Gameboard } from '../src/classes/gameboard';
+import { Ship } from '../../src/classes/ship';
+import { Gameboard } from '../../src/classes/gameboard';
 
 describe("Create Gameboard", () => {
 	let myGameboard = new Gameboard();
