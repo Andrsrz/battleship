@@ -50,7 +50,9 @@ class Ship{
 		}
 	}
 
-	/*  */
+	/* Before we fill the ship's positions we validate the coordinates provided
+	 * by the user. Once these are validated we fill the position array looping
+	 * through the ship's size. */
 	fillPosition(initCoord, finalCoord){
 		let initLetter = initCoord.slice(0, 1);
 		let initNum = initCoord.slice(1, 2);
