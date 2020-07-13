@@ -49,10 +49,15 @@ class Gameboard{
 		/* Check every ship coordinates */
 		for(let shipIter = 0; shipIter < this.ships.length; shipIter++){
 			for(let coord = 0; coord < this.ships[shipIter].position.length; coord++){
-				if(coordinates === this.ships[shipIter].position[coord])
+				if(coordinates === this.ships[shipIter].position[coord]){
+					/* Track hits */
+					this.hits.push(coordinates);
 					return 'X';
+				}
 			}
 		}
+		/* Track missed hits */
+		this.missedHits.push(coordinates);
 		return '/';
 	}
 }
