@@ -42,9 +42,14 @@ describe("isSunk()", () => {
 });
 
 describe("fillPosition", () => {
-	let myShip = new Ship('Aircraft Carrier', 5);
+	let Aircraft = new Ship('Aircraft Carrier', 5);
+	let Cruiser = new Ship('Cruiser', 3);
 
 	test("Position filled correctly Horizontal (checking valid ship size and direction)", () => {
-		expect(myShip.fillPosition('F3', 'F7')).toStrictEqual(['F3', 'F4', 'F5', 'F6', 'F7']);
+		expect(Aircraft.fillPosition('F3', 'F7')).toStrictEqual(['F3', 'F4', 'F5', 'F6', 'F7']);
+	});
+
+	test("Position filled correctly Vertical (checking valid ship size and direction)", () => {
+		expect(Cruiser.fillPosition('C3', 'E3')).toStrictEqual(['C3', 'D3', 'E3']);
 	});
 });

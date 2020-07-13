@@ -58,9 +58,16 @@ class Ship{
 		let finalNum = finalCoord.slice(1, 2);
 		let direction = this._checkValidShipSize(initLetter, initNum, finalLetter, finalNum);
 
-		if(direction === "Horizontal"){
+		if(direction === "Horizontal" && initLetter === finalLetter){
 			for(let i = 0; i < this.size; i++){
 				this.position.push(initLetter + (Number(initNum) + i));
+			}
+		}else if(direction === "Vertical" && initNum === finalNum){
+			for(let i = 0; i < this.size; i++){
+				let code = initLetter.charCodeAt(0);
+				code += i;
+				let letter = String.fromCharCode(code);
+				this.position.push(letter + initNum);
 			}
 		}
 
