@@ -57,4 +57,9 @@ describe("receiveAttack()", () => {
 	test("Attack missed (Ships without stablished position)", () => {
 		expect(myGameboard.receiveAttack('G5')).toMatch('/');
 	});
+
+	test("Attack (Ships with stablished position)", () => {
+		myGameboard.aircraft.fillPosition('A3', 'A7');
+		expect(myGameboard.receiveAttack('A5')).toMatch('X');
+	});
 });

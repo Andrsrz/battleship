@@ -49,7 +49,7 @@ class Gameboard{
 		/* Check every ship coordinates */
 		for(let shipIter = 0; shipIter < this.ships.length; shipIter++){
 			for(let coord = 0; coord < this.ships[shipIter].position.length; coord++){
-				if(coordinates === this.ships[shipIter].position)
+				if(coordinates === this.ships[shipIter].position[coord])
 					return 'X';
 			}
 		}
