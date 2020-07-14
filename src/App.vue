@@ -1,20 +1,25 @@
 <template>
 	<div id="app">
-		<img alt="Vue logo" src="./assets/logo.png">
-		<HelloWorld msg="Welcome to Your Vue.js App"/>
-		<FancyHeading title="Hello, Heading" color="blue"/>
+		<Form :gameboard="this.player.gameboard"/>
 	</div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
-import FancyHeading from './components/FancyHeading.vue';
+/* Components */
+import Form from './components/Form.vue';
+/* Classes */
+import { Player } from './classes/player.js';
 
 export default {
 	name: 'App',
 	components: {
-		HelloWorld,
-		FancyHeading
+		Form
+	},
+	data() {
+		return {
+			player: new Player(),
+			cpu: new Player()
+		}
 	}
 }
 </script>

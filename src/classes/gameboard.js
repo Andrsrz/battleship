@@ -63,6 +63,7 @@ class Gameboard{
 	}
 
 	_getBoardList(){
+		/* This need to bo a linked list for fast inserts and deletion */
 		let boardList = [];
 		for(let row = 0; row < this.board.length; row++){
 			for(let column = 0; column < this.board[row].length; column++){
