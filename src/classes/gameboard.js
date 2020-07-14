@@ -14,6 +14,7 @@ class Gameboard{
 			['I1', 'I2', 'I3', 'I4', 'I5', 'I6', 'I7', 'I8', 'I9', 'I10'],
 			['J1', 'J2', 'J3', 'J4', 'J5', 'J6', 'J7', 'J8', 'J9', 'J10']
 		];
+		this.boardList = this._getBoardList();
 		this.aircraft = new Ship('Aircraft Carrier', 5);
 		this.battleship = new Ship('Battleship', 4);
 		this.cruiser = new Ship('Cruiser', 3);
@@ -59,6 +60,17 @@ class Gameboard{
 		/* Track missed hits */
 		this.missedHits.push(coordinates);
 		return '/';
+	}
+
+	_getBoardList(){
+		let boardList = [];
+		for(let row = 0; row < this.board.length; row++){
+			for(let column = 0; column < this.board[row].length; column++){
+				boardList.push(this.board[row][column]);
+			}
+		}
+
+		return boardList;
 	}
 }
 
