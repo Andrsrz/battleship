@@ -63,6 +63,17 @@ describe("removeAt(position)", () => {
 	});
 });
 
+describe("remove(item)", () => {
+	let myList = new List();
+	myList.append("A1");
+	myList.append("G5");
+	myList.append("F4");
+
+	test("Remove item", () => {
+		expect(myList.remove("G5")).toMatch("A1, F4");
+	});
+});
+
 describe("insert(position, item)", () => {
 	let myList = new List();
 	myList.append("A1");

@@ -87,6 +87,15 @@ export default class List{
 		}
 	}
 
+	/* Remove the specified item
+	 * @param item : Any
+	 * @return list : String */
+	remove(item){
+		let index = this.indexOf(item);
+		this.removeAt(index);
+		return this.toString();
+	}
+
 	/* Add an item in the desire position.
 	 * @param position : int, item : Any
 	 * @return node.item : Any */
