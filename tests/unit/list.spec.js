@@ -12,7 +12,7 @@ describe("append()", () => {
 	});
 });
 
-describe("removeAt()", () => {
+describe("removeAt(position)", () => {
 	let myList = new List();
 	myList.append("A1");
 	myList.append("G5");
@@ -28,5 +28,19 @@ describe("removeAt()", () => {
 
 	test("Remove Head", () => {
 		expect(myList.removeAt(0)).toMatch("A1");
+	});
+});
+
+describe("insert(position, item)", () => {
+	let myList = new List();
+	myList.append("A1");
+	myList.append("F4");
+
+	test("Insert in the middle of the list", () => {
+		expect(myList.insert(1, "G5")).toMatch("G5");
+	});
+
+	test("Check out of bounds values", () => {
+		expect(myList.insert(6, "G5")).toBeFalsy();
 	});
 });

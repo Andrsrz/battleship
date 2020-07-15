@@ -54,4 +54,13 @@ export default class List{
 			return null;
 		}
 	}
+
+	insert(position, item){
+		/* Check for out of bounds values */
+		if(position >= 0 && position <= this.length){
+
+		}else{
+			return false;
+		}
+	}
 }
