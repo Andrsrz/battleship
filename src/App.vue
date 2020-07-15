@@ -8,7 +8,7 @@
 /* Components */
 import Form from './components/Form.vue';
 /* Classes */
-import { Player } from './classes/player.js';
+import Player from './classes/player';
 
 export default {
 	name: 'App',
