@@ -6,6 +6,30 @@ export default class List{
 		this.length = 0;
 	}
 
+	/* Get size of list
+	 * @param none : none
+	 * @return length : int */
+	size(){
+		return this.length;
+	}
+
+	/* Check wether or not the list is empty
+	 * @param none : none
+	 * @return isEmpty : boolean */
+	isEmpty(){
+		if(this.head === null && this.length === 0)
+			return true;
+		else
+			return false;
+	}
+
+	/* Get list's head
+	 * @param none : none
+	 * @return node : Any */
+	getHead(){
+		return this.head;
+	}
+
 	/* Add item at the end of the list.
 	 * @param item : Any
 	 * @return list.length : int */

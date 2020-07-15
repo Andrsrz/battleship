@@ -1,4 +1,28 @@
 import List from '../../src/classes/list';
+import Node from '../../src/classes/node';
+
+describe("Basic methods : size(), isEmpty(), getHead()", () => {
+	let myList = new List();
+	myList.append("G6");
+	myList.append("G5");
+	myList.append("G4");
+
+	let myList2 = new List();
+	let node = new Node("A1");
+	myList2.append("A1");
+
+	test("Check size", () => {
+		expect(myList.size()).toBe(3);
+	});
+
+	test("Check emptiness", () => {
+		expect(myList.isEmpty()).toBeFalsy();
+	});
+
+	test("Return list's head", () => {
+		expect(myList2.getHead()).toMatchObject(node);
+	});
+});
 
 describe("append()", () => {
 	let myList = new List();
