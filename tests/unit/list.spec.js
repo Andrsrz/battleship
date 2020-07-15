@@ -1,7 +1,7 @@
 import List from '../../src/classes/list';
 import Node from '../../src/classes/node';
 
-describe("Basic methods : size(), isEmpty(), getHead()", () => {
+describe("Basic methods : size(), isEmpty(), getHead(), indexOf(item)", () => {
 	let myList = new List();
 	myList.append("G6");
 	myList.append("G5");
@@ -21,6 +21,14 @@ describe("Basic methods : size(), isEmpty(), getHead()", () => {
 
 	test("Return list's head", () => {
 		expect(myList2.getHead()).toMatchObject(node);
+	});
+
+	test("Return item's index", () => {
+		expect(myList.indexOf("G5")).toBe(1);
+	});
+
+	test("Item is not in the list therefore there's no index", () => {
+		expect(myList.indexOf("B4")).toBe(-1);
 	});
 });
 
@@ -70,5 +78,16 @@ describe("insert(position, item)", () => {
 
 	test("Insert in another position", () => {
 		expect(myList.insert(1, "D2")).toMatch("D2");
+	});
+});
+
+describe("toString()", () => {
+	let myList = new List();
+	myList.append("A1");
+	myList.append("G5");
+	myList.append("F4");
+
+	test("Return list as string", () => {
+		expect(myList.toString()).toMatch("A1, G5, F4");
 	});
 });

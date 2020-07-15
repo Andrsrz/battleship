@@ -125,4 +125,37 @@ export default class List{
 			return false;
 		}
 	}
+
+	/* Return list as a string
+	 * @param none : none
+	 * @return list : String */
+	toString(){
+		let current = this.head;
+		let str = '';
+
+		while(current){
+			str += ( current.item + (current.next ? ', ' : '') );
+			current = current.next;
+		}
+
+		return str;
+	}
+
+	/* Return index of item
+	 * @param item : Any
+	 * @return index : int */
+	indexOf(item){
+		let current = this.head;
+		let index = 0;
+
+		while(current){
+			if(item === current.item)
+				return index;
+
+			index++;
+			current = current.next; /* Move around our list */
+		}
+
+		return -1;
+	}
 }
