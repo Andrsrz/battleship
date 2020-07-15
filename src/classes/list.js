@@ -3,33 +3,28 @@ import Node from './node';
 export default class List{
 	constructor(){
 		this.head = null;
-		this.size = 0;
+		this.length = 0;
 	}
 
-	insertFirst(data){
-		this.head = new Node(data, this.head);
-		this.size++;
+	/* Add item at the end of the list */
+	append(item){
+		let node = new Node(item), current;
 
-		return this.size;
-	}
-
-	insertLast(data){
-		let node = new Node(data);
-		let current;
-
-		/* If empty make head */
-		if(!this.head){
+		/* Check wether or not the list has no items */
+		if(this.head === null){
 			this.head = node;
 		}else{
 			current = this.head;
-
+			/* Loop through the list to find the last item */
 			while(current.next){
 				current = current.next;
 			}
-
+			/* Get the last item and assign next to node to make
+			 * the link */
 			current.next = node;
 		}
+		this.length++;
 
-		this.size++;
+		return this.length;
 	}
 }
