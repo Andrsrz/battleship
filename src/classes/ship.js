@@ -1,4 +1,4 @@
-class Ship{
+export default class Ship{
 	constructor(name, size){
 		this.name = name ? name : '';
 		this.size = size ? size : 0;
@@ -78,5 +78,3 @@ class Ship{
 		return this.position;
 	}
 }
-
-export { Ship };

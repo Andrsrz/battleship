@@ -1,6 +1,7 @@
-import { Ship } from './ship';
+import Ship from './ship';
+import List from './list';
 
-class Gameboard{
+export default class Gameboard{
 	constructor(){
 		this.board = [
 			['A1', 'A2', 'A3', 'A4', 'A5', 'A6', 'A7', 'A8', 'A9', 'A10'],
@@ -63,16 +64,13 @@ class Gameboard{
 	}
 
 	_getBoardList(){
-		/* This need to bo a linked list for fast inserts and deletion */
-		let boardList = [];
+		let boardList = new List();
 		for(let row = 0; row < this.board.length; row++){
 			for(let column = 0; column < this.board[row].length; column++){
-				boardList.push(this.board[row][column]);
+				boardList.append(this.board[row][column]);
 			}
 		}
 
 		return boardList;
 	}
 }
-
-export { Gameboard };

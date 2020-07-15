@@ -1,6 +1,6 @@
-import { Gameboard } from './gameboard';
+import Gameboard from './gameboard';
 
-class Player{
+export default class Player{
 	constructor(){
 		this.gameboard = new Gameboard();
 		this.max = 9;
@@ -31,5 +31,3 @@ class Player{
 		return coord;
 	}
 }
-
-export { Player };
