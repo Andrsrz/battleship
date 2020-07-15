@@ -1,16 +1,32 @@
 import List from '../../src/classes/list';
-import Node from '../../src/classes/node';
 
-describe("insertFirst()", () => {
+describe("append()", () => {
 	let myList = new List();
-	let node = new Node("Node1");
-	let node2 = new Node("Node2");
 
 	test("Insert first node", () => {
-		expect(myList.append(node)).toBe(1);
+		expect(myList.append("A1")).toBe(1);
 	});
 
 	test("Insert another node", () => {
-		expect(myList.append(node2)).toBe(2);
+		expect(myList.append("G5")).toBe(2);
+	});
+});
+
+describe("removeAt()", () => {
+	let myList = new List();
+	myList.append("A1");
+	myList.append("G5");
+	myList.append("F4");
+
+	test("Remove item that is not the head", () => {
+		expect(myList.removeAt(1)).toMatch("G5");
+	});
+
+	test("Try remove at invalid position", () => {
+		expect(myList.removeAt(5)).toBeFalsy();
+	});
+
+	test("Remove Head", () => {
+		expect(myList.removeAt(0)).toMatch("A1");
 	});
 });
