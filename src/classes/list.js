@@ -54,7 +54,7 @@ export default class List{
 		}
 		this.length++;
 
-		return this.length;
+		return this.toString();
 	}
 
 	/* Remove an item from the desire position
@@ -81,7 +81,7 @@ export default class List{
 			}
 			this.length--;
 
-			return current.item;
+			return this.toString();
 		}else{
 			return null;
 		}
@@ -129,7 +129,7 @@ export default class List{
 			}
 
 			this.length++;
-			return node.item;
+			return this.toString();
 		}else{
 			return false;
 		}

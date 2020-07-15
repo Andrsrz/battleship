@@ -36,11 +36,11 @@ describe("append()", () => {
 	let myList = new List();
 
 	test("Insert first node", () => {
-		expect(myList.append("A1")).toBe(1);
+		expect(myList.append("A1")).toMatch("A1");
 	});
 
 	test("Insert another node", () => {
-		expect(myList.append("G5")).toBe(2);
+		expect(myList.append("G5")).toMatch("A1, G5");
 	});
 });
 
@@ -51,7 +51,7 @@ describe("removeAt(position)", () => {
 	myList.append("F4");
 
 	test("Remove item that is not the head", () => {
-		expect(myList.removeAt(1)).toMatch("G5");
+		expect(myList.removeAt(1)).toMatch("A1, F4");
 	});
 
 	test("Try remove at invalid position", () => {
@@ -59,7 +59,7 @@ describe("removeAt(position)", () => {
 	});
 
 	test("Remove Head", () => {
-		expect(myList.removeAt(0)).toMatch("A1");
+		expect(myList.removeAt(0)).toMatch("F4");
 	});
 });
 
@@ -84,11 +84,11 @@ describe("insert(position, item)", () => {
 	});
 
 	test("Insert in the head", () => {
-		expect(myList.insert(0, "G5")).toMatch("G5");
+		expect(myList.insert(0, "G5")).toMatch("G5, A1, F4");
 	});
 
 	test("Insert in another position", () => {
-		expect(myList.insert(1, "D2")).toMatch("D2");
+		expect(myList.insert(1, "D2")).toMatch("G5, D2, A1, F4");
 	});
 });
 
