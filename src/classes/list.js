@@ -6,9 +6,12 @@ export default class List{
 		this.length = 0;
 	}
 
-	/* Add item at the end of the list */
+	/* Add item at the end of the list.
+	 * @param item : Any
+	 * @return list.length : int */
 	append(item){
-		let node = new Node(item), current;
+		let node = new Node(item);
+		let current;
 
 		/* Check wether or not the list has no items */
 		if(this.head === null){
@@ -30,9 +33,14 @@ export default class List{
 		return this.length;
 	}
 
+	/* Remove an item from the desire position
+	 * @param position : int
+	 * @return node.item : Any */
 	removeAt(position){
 		if(position > -1 && position < this.length){
-			let current = this.head, previous, index = 0;
+			let current = this.head;
+			let previous;
+			let index = 0;
 
 			/* Removing head */
 			if(position === 0){
@@ -55,10 +63,40 @@ export default class List{
 		}
 	}
 
+	/* Add an item in the desire position.
+	 * @param position : int, item : Any
+	 * @return node.item : Any */
 	insert(position, item){
 		/* Check for out of bounds values */
 		if(position >= 0 && position <= this.length){
+			let node = new Node(item);
+			let current = this.head;
+			let previous;
+			let index = 0;
 
+			/* To insert at the beginning of the list we need to set the
+			 * new node as the list's head and set our new head's next
+			 * to the previous head. */
+			if(position === 0){
+				node.next = current;
+				this.head = node;
+			}else{
+				while(index < position){
+					previous = current;
+					current = current.next;
+					index++;
+				}
+
+				/* We loop through our list items until we reach the desired
+				 * position. Then we switch the pointers to what we want.
+				 * In this case our new node's next will be the current and
+				 * the previous's next will be our new node. */
+				node.next = current;
+				previous.next = node;
+			}
+
+			this.length++;
+			return node.item;
 		}else{
 			return false;
 		}

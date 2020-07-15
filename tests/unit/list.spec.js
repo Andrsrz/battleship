@@ -36,11 +36,15 @@ describe("insert(position, item)", () => {
 	myList.append("A1");
 	myList.append("F4");
 
-	test("Insert in the middle of the list", () => {
-		expect(myList.insert(1, "G5")).toMatch("G5");
-	});
-
 	test("Check out of bounds values", () => {
 		expect(myList.insert(6, "G5")).toBeFalsy();
+	});
+
+	test("Insert in the head", () => {
+		expect(myList.insert(0, "G5")).toMatch("G5");
+	});
+
+	test("Insert in another position", () => {
+		expect(myList.insert(1, "D2")).toMatch("D2");
 	});
 });
