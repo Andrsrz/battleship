@@ -1,5 +1,5 @@
 <template>
-	<div class="form">
+	<form class="form">
 		<div class="field">
 			<label class="label">Aircraft (5 spaces)</label>
 			<div class="coord-container">
@@ -119,12 +119,10 @@
 				</div>
 			</div>
 		</div>
-		<div class="field is-grouped">
-			<div class="control">
-				<button class="button is-link">Submit</button>
-			</div>
+		<div class="control btn">
+			<button class="button is-primary">Submit</button>
 		</div>
-	</div>
+	</form>
 </template>
 
 <script>
@@ -163,5 +161,9 @@ export default {
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: space-around;
- }
+}
+
+.btn {
+	text-align: center;
+}
 </style>
