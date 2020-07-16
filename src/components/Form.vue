@@ -1,5 +1,124 @@
 <template>
 	<div class="form">
+		<div class="field">
+			<label class="label">Aircraft (5 spaces)</label>
+			<div class="coord-container">
+				<div class="field">
+					<label class="label">X (1-10)</label>
+					<div class="control">
+						<input class="input" type="text" placeholder="Text input">
+					</div>
+				</div>
+				<div class="field">
+					<label class="label">Y (A-J)</label>
+					<div class="control">
+						<input class="input" type="text" placeholder="Text input">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="field">
+			<label class="label">Battleship (4 spaces)</label>
+			<div class="coord-container">
+				<div class="field">
+					<label class="label">X (1-10)</label>
+					<div class="control">
+						<input class="input" type="text" placeholder="Text input">
+					</div>
+				</div>
+				<div class="field">
+					<label class="label">Y (A-J)</label>
+					<div class="control">
+						<input class="input" type="text" placeholder="Text input">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="field">
+			<label class="label">Cruiser (3 spaces)</label>
+			<div class="coord-container">
+				<div class="field">
+					<label class="label">X (1-10)</label>
+					<div class="control">
+						<input class="input" type="text" placeholder="Text input">
+					</div>
+				</div>
+				<div class="field">
+					<label class="label">Y (A-J)</label>
+					<div class="control">
+						<input class="input" type="text" placeholder="Text input">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="field">
+			<label class="label">Destroyer (2 spaces)</label>
+			<div class="coord-container">
+				<div class="field">
+					<label class="label">X (1-10)</label>
+					<div class="control">
+						<input class="input" type="text" placeholder="Text input">
+					</div>
+				</div>
+				<div class="field">
+					<label class="label">Y (A-J)</label>
+					<div class="control">
+						<input class="input" type="text" placeholder="Text input">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="field">
+			<label class="label">Destroyer (2 spaces)</label>
+			<div class="coord-container">
+				<div class="field">
+					<label class="label">X (1-10)</label>
+					<div class="control">
+						<input class="input" type="text" placeholder="Text input">
+					</div>
+				</div>
+				<div class="field">
+					<label class="label">Y (A-J)</label>
+					<div class="control">
+						<input class="input" type="text" placeholder="Text input">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="field">
+			<label class="label">Submarine (1 space)</label>
+			<div class="coord-container">
+				<div class="field">
+					<label class="label">X (1-10)</label>
+					<div class="control">
+						<input class="input" type="text" placeholder="Text input">
+					</div>
+				</div>
+				<div class="field">
+					<label class="label">Y (A-J)</label>
+					<div class="control">
+						<input class="input" type="text" placeholder="Text input">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="field">
+			<label class="label">Submarine (1 space)</label>
+			<div class="coord-container">
+				<div class="field">
+					<label class="label">X (1-10)</label>
+					<div class="control">
+						<input class="input" type="text" placeholder="Text input">
+					</div>
+				</div>
+				<div class="field">
+					<label class="label">Y (A-J)</label>
+					<div class="control">
+						<input class="input" type="text" placeholder="Text input">
+					</div>
+				</div>
+			</div>
+		</div>
 		<div class="field is-grouped">
 			<div class="control">
 				<button class="button is-link">Submit</button>
@@ -40,12 +159,9 @@ export default {
 </script>
 
 <style scoped>
-.field.has-addons * {
-	margin-left: 5px;
-	margin-right: 5px;
-}
-
-.form {
-	margin-left: 20px;
-}
+.coord-container {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-around;
+ }
 </style>
