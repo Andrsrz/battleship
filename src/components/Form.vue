@@ -4,13 +4,13 @@
 			<label class="label">Aircraft (5 spaces)</label>
 			<div class="coord-container">
 				<div class="field">
-					<label class="label">X (1-10)</label>
+					<label class="label">{{ xcoords }}</label>
 					<div class="control">
 						<input class="input" type="text" placeholder="Text input">
 					</div>
 				</div>
 				<div class="field">
-					<label class="label">Y (A-J)</label>
+					<label class="label">{{ ycoords }}</label>
 					<div class="control">
 						<input class="input" type="text" placeholder="Text input">
 					</div>
@@ -21,13 +21,13 @@
 			<label class="label">Battleship (4 spaces)</label>
 			<div class="coord-container">
 				<div class="field">
-					<label class="label">X (1-10)</label>
+					<label class="label">{{ xcoords }}</label>
 					<div class="control">
 						<input class="input" type="text" placeholder="Text input">
 					</div>
 				</div>
 				<div class="field">
-					<label class="label">Y (A-J)</label>
+					<label class="label">{{ ycoords }}</label>
 					<div class="control">
 						<input class="input" type="text" placeholder="Text input">
 					</div>
@@ -38,30 +38,13 @@
 			<label class="label">Cruiser (3 spaces)</label>
 			<div class="coord-container">
 				<div class="field">
-					<label class="label">X (1-10)</label>
+					<label class="label">{{ xcoords }}</label>
 					<div class="control">
 						<input class="input" type="text" placeholder="Text input">
 					</div>
 				</div>
 				<div class="field">
-					<label class="label">Y (A-J)</label>
-					<div class="control">
-						<input class="input" type="text" placeholder="Text input">
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="field">
-			<label class="label">Destroyer (2 spaces)</label>
-			<div class="coord-container">
-				<div class="field">
-					<label class="label">X (1-10)</label>
-					<div class="control">
-						<input class="input" type="text" placeholder="Text input">
-					</div>
-				</div>
-				<div class="field">
-					<label class="label">Y (A-J)</label>
+					<label class="label">{{ ycoords }}</label>
 					<div class="control">
 						<input class="input" type="text" placeholder="Text input">
 					</div>
@@ -72,13 +55,30 @@
 			<label class="label">Destroyer (2 spaces)</label>
 			<div class="coord-container">
 				<div class="field">
-					<label class="label">X (1-10)</label>
+					<label class="label">{{ xcoords }}</label>
 					<div class="control">
 						<input class="input" type="text" placeholder="Text input">
 					</div>
 				</div>
 				<div class="field">
-					<label class="label">Y (A-J)</label>
+					<label class="label">{{ ycoords }}</label>
+					<div class="control">
+						<input class="input" type="text" placeholder="Text input">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="field">
+			<label class="label">Destroyer (2 spaces)</label>
+			<div class="coord-container">
+				<div class="field">
+					<label class="label">{{ xcoords }}</label>
+					<div class="control">
+						<input class="input" type="text" placeholder="Text input">
+					</div>
+				</div>
+				<div class="field">
+					<label class="label">{{ ycoords }}</label>
 					<div class="control">
 						<input class="input" type="text" placeholder="Text input">
 					</div>
@@ -89,13 +89,13 @@
 			<label class="label">Submarine (1 space)</label>
 			<div class="coord-container">
 				<div class="field">
-					<label class="label">X (1-10)</label>
+					<label class="label">{{ xcoords }}</label>
 					<div class="control">
 						<input class="input" type="text" placeholder="Text input">
 					</div>
 				</div>
 				<div class="field">
-					<label class="label">Y (A-J)</label>
+					<label class="label">{{ ycoords }}</label>
 					<div class="control">
 						<input class="input" type="text" placeholder="Text input">
 					</div>
@@ -106,13 +106,13 @@
 			<label class="label">Submarine (1 space)</label>
 			<div class="coord-container">
 				<div class="field">
-					<label class="label">X (1-10)</label>
+					<label class="label">{{ xcoords }}</label>
 					<div class="control">
 						<input class="input" type="text" placeholder="Text input">
 					</div>
 				</div>
 				<div class="field">
-					<label class="label">Y (A-J)</label>
+					<label class="label">{{ ycoords }}</label>
 					<div class="control">
 						<input class="input" type="text" placeholder="Text input">
 					</div>
@@ -133,6 +133,8 @@ export default {
 	},
 	data(){
 		return {
+			xcoords: 'X (1-10)',
+			ycoords: 'Y (A-J)',
 			aircraftInitCoord: '',
 			aircraftFinalCoord: '',
 			battleshipInitCoord: '',
