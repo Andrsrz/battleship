@@ -120,7 +120,7 @@
 			</div>
 		</div>
 		<div class="control btn">
-			<button class="button is-primary" @click="startGame()">Submit</button>
+			<button class="button is-primary" @click="getCoordinates()">Submit</button>
 		</div>
 	</div>
 </template>
@@ -152,7 +152,7 @@ export default {
 		}
 	},
 	methods: {
-		startGame(){
+		getCoordinates(){
 			if(this.aircraftInitCoord === "" ||
 			this.aircraftFinalCoord === "" ||
 			this.battleshipInitCoord === "" ||
@@ -166,10 +166,33 @@ export default {
 			this.submarine1InitCoord === "" ||
 			this.submarine1FinalCoord === "" ||
 			this.submarine2InitCoord === "" ||
-			this.submarine2FinalCoord === "")
+			this.submarine2FinalCoord === ""){
 				alert("Enter all the coordinates");
-			else
-				alert("Game Start!");
+			}else if(!this.gameboard.aircraft.fillPosition(this.aircraftInitCoord, this.aircraftFinalCoord) ||
+				!this.gameboard.battleship.fillPosition(this.battleshipInitCoord, this.battleshipFinalCoord) ||
+				!this.gameboard.cruiser.fillPosition(this.cruiserInitCoord, this.cruiserFinalCoord) ||
+				!this.gameboard.destroyer1.fillPosition(this.destroyer1InitCoord, this.destroyer1FinalCoord) ||
+				!this.gameboard.destroyer2.fillPosition(this.destroyer2InitCoord, this.destroyer2FinalCoord) ||
+				!this.gameboard.submarine1.fillPosition(this.submarine1InitCoord, this.submarine1FinalCoord) ||
+				!this.gameboard.submarine2.fillPosition(this.submarine2InitCoord, this.submarine2FinalCoord)){
+				alert("Please check that the coordinates are valid\nonly horizontal and vertical directions");
+			}else{
+				/* Success. Clear inputs */
+				this.aircraftInitCoord = "";
+				this.aircraftFinalCoord = "";
+				this.battleshipInitCoord = "";
+				this.battleshipFinalCoord = "";
+				this.cruiserInitCoord = "";
+				this.cruiserFinalCoord = "";
+				this.destroyer1InitCoord = "";
+				this.destroyer1FinalCoord = "";
+				this.destroyer2InitCoord = "";
+				this.destroyer2FinalCoord = "";
+				this.submarine1InitCoord = "";
+				this.submarine1FinalCoord = "";
+				this.submarine2InitCoord = "";
+				this.submarine2FinalCoord = "";
+			}
 		}
 	}
 }
