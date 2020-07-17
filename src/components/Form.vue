@@ -6,13 +6,13 @@
 				<div class="field">
 					<label class="label">{{ xcoords }}</label>
 					<div class="control">
-						<input class="input" type="text" placeholder="Text input">
+						<input class="input" type="text" maxlength="1">
 					</div>
 				</div>
 				<div class="field">
 					<label class="label">{{ ycoords }}</label>
 					<div class="control">
-						<input class="input" type="text" placeholder="Text input">
+						<input class="input" type="number" min="1" max="10" maxlength="2">
 					</div>
 				</div>
 			</div>
@@ -23,13 +23,13 @@
 				<div class="field">
 					<label class="label">{{ xcoords }}</label>
 					<div class="control">
-						<input class="input" type="text" placeholder="Text input">
+						<input class="input" type="text" maxlength="1">
 					</div>
 				</div>
 				<div class="field">
 					<label class="label">{{ ycoords }}</label>
 					<div class="control">
-						<input class="input" type="text" placeholder="Text input">
+						<input class="input" type="number" min="1" max="10" maxlength="2">
 					</div>
 				</div>
 			</div>
@@ -40,13 +40,13 @@
 				<div class="field">
 					<label class="label">{{ xcoords }}</label>
 					<div class="control">
-						<input class="input" type="text" placeholder="Text input">
+						<input class="input" type="text" maxlength="1">
 					</div>
 				</div>
 				<div class="field">
 					<label class="label">{{ ycoords }}</label>
 					<div class="control">
-						<input class="input" type="text" placeholder="Text input">
+						<input class="input" type="number" min="1" max="10" maxlength="2">
 					</div>
 				</div>
 			</div>
@@ -57,13 +57,13 @@
 				<div class="field">
 					<label class="label">{{ xcoords }}</label>
 					<div class="control">
-						<input class="input" type="text" placeholder="Text input">
+						<input class="input" type="text" maxlength="1">
 					</div>
 				</div>
 				<div class="field">
 					<label class="label">{{ ycoords }}</label>
 					<div class="control">
-						<input class="input" type="text" placeholder="Text input">
+						<input class="input" type="number" min="1" max="10" maxlength="2">
 					</div>
 				</div>
 			</div>
@@ -74,13 +74,13 @@
 				<div class="field">
 					<label class="label">{{ xcoords }}</label>
 					<div class="control">
-						<input class="input" type="text" placeholder="Text input">
+						<input class="input" type="text" maxlength="1">
 					</div>
 				</div>
 				<div class="field">
 					<label class="label">{{ ycoords }}</label>
 					<div class="control">
-						<input class="input" type="text" placeholder="Text input">
+						<input class="input" type="number" min="1" max="10" maxlength="2">
 					</div>
 				</div>
 			</div>
@@ -91,13 +91,13 @@
 				<div class="field">
 					<label class="label">{{ xcoords }}</label>
 					<div class="control">
-						<input class="input" type="text" placeholder="Text input">
+						<input class="input" type="text" maxlength="1">
 					</div>
 				</div>
 				<div class="field">
 					<label class="label">{{ ycoords }}</label>
 					<div class="control">
-						<input class="input" type="text" placeholder="Text input">
+						<input class="input" type="number" min="1" max="10" maxlength="2">
 					</div>
 				</div>
 			</div>
@@ -108,13 +108,13 @@
 				<div class="field">
 					<label class="label">{{ xcoords }}</label>
 					<div class="control">
-						<input class="input" type="text" placeholder="Text input">
+						<input class="input" type="text" maxlength="1">
 					</div>
 				</div>
 				<div class="field">
 					<label class="label">{{ ycoords }}</label>
 					<div class="control">
-						<input class="input" type="text" placeholder="Text input">
+						<input class="input" type="number" min="1" max="10" maxlength="2">
 					</div>
 				</div>
 			</div>
@@ -133,8 +133,8 @@ export default {
 	},
 	data(){
 		return {
-			xcoords: 'X (1-10)',
-			ycoords: 'Y (A-J)',
+			xcoords: 'X (A-J)',
+			ycoords: 'Y (1-10)',
 			aircraftInitCoord: '',
 			aircraftFinalCoord: '',
 			battleshipInitCoord: '',
