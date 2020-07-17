@@ -4,7 +4,8 @@
 			<div class="cell"
 					v-for="(coord, index) in this.gameboard.boardArray"
 					:key="index"
-					@click="hit(coord)">
+					@click="hit(coord)"
+					:id="coord">
 				{{ coord }}
 			</div>
 		</div>
