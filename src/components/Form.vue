@@ -5,14 +5,16 @@
 			<div class="coord-container">
 				<div class="field">
 					<label class="label">{{ xcoords }}</label>
-					<div class="control">
-						<input class="input" type="text" maxlength="1">
-					</div>
+					<b-select placeholder="X Coordinate">
+						<option v-for="coord in xCoordsArr" :key="coord">
+							{{ coord }}
+						</option>
+					</b-select>
 				</div>
 				<div class="field">
 					<label class="label">{{ ycoords }}</label>
 					<div class="control">
-						<input class="input" type="number" min="1" max="10" maxlength="2">
+						<input class="input" type="number" placeholder="Y Coordinate" min="1" max="10" maxlength="2">
 					</div>
 				</div>
 			</div>
@@ -22,14 +24,16 @@
 			<div class="coord-container">
 				<div class="field">
 					<label class="label">{{ xcoords }}</label>
-					<div class="control">
-						<input class="input" type="text" maxlength="1">
-					</div>
+					<b-select placeholder="X Coordinate">
+						<option v-for="coord in xCoordsArr" :key="coord">
+							{{ coord }}
+						</option>
+					</b-select>
 				</div>
 				<div class="field">
 					<label class="label">{{ ycoords }}</label>
 					<div class="control">
-						<input class="input" type="number" min="1" max="10" maxlength="2">
+						<input class="input" type="number" placeholder="Y Coordinate" min="1" max="10" maxlength="2">
 					</div>
 				</div>
 			</div>
@@ -39,14 +43,16 @@
 			<div class="coord-container">
 				<div class="field">
 					<label class="label">{{ xcoords }}</label>
-					<div class="control">
-						<input class="input" type="text" maxlength="1">
-					</div>
+					<b-select placeholder="X Coordinate">
+						<option v-for="coord in xCoordsArr" :key="coord">
+							{{ coord }}
+						</option>
+					</b-select>
 				</div>
 				<div class="field">
 					<label class="label">{{ ycoords }}</label>
 					<div class="control">
-						<input class="input" type="number" min="1" max="10" maxlength="2">
+						<input class="input" type="number" placeholder="Y Coordinate" min="1" max="10" maxlength="2">
 					</div>
 				</div>
 			</div>
@@ -56,14 +62,16 @@
 			<div class="coord-container">
 				<div class="field">
 					<label class="label">{{ xcoords }}</label>
-					<div class="control">
-						<input class="input" type="text" maxlength="1">
-					</div>
+					<b-select placeholder="X Coordinate">
+						<option v-for="coord in xCoordsArr" :key="coord">
+							{{ coord }}
+						</option>
+					</b-select>
 				</div>
 				<div class="field">
 					<label class="label">{{ ycoords }}</label>
 					<div class="control">
-						<input class="input" type="number" min="1" max="10" maxlength="2">
+						<input class="input" type="number" placeholder="Y Coordinate" min="1" max="10" maxlength="2">
 					</div>
 				</div>
 			</div>
@@ -73,14 +81,16 @@
 			<div class="coord-container">
 				<div class="field">
 					<label class="label">{{ xcoords }}</label>
-					<div class="control">
-						<input class="input" type="text" maxlength="1">
-					</div>
+					<b-select placeholder="X Coordinate">
+						<option v-for="coord in xCoordsArr" :key="coord">
+							{{ coord }}
+						</option>
+					</b-select>
 				</div>
 				<div class="field">
 					<label class="label">{{ ycoords }}</label>
 					<div class="control">
-						<input class="input" type="number" min="1" max="10" maxlength="2">
+						<input class="input" type="number" placeholder="Y Coordinate" min="1" max="10" maxlength="2">
 					</div>
 				</div>
 			</div>
@@ -90,14 +100,16 @@
 			<div class="coord-container">
 				<div class="field">
 					<label class="label">{{ xcoords }}</label>
-					<div class="control">
-						<input class="input" type="text" maxlength="1">
-					</div>
+					<b-select placeholder="X Coordinate">
+						<option v-for="coord in xCoordsArr" :key="coord">
+							{{ coord }}
+						</option>
+					</b-select>
 				</div>
 				<div class="field">
 					<label class="label">{{ ycoords }}</label>
 					<div class="control">
-						<input class="input" type="number" min="1" max="10" maxlength="2">
+						<input class="input" type="number" placeholder="Y Coordinate" min="1" max="10" maxlength="2">
 					</div>
 				</div>
 			</div>
@@ -107,14 +119,16 @@
 			<div class="coord-container">
 				<div class="field">
 					<label class="label">{{ xcoords }}</label>
-					<div class="control">
-						<input class="input" type="text" maxlength="1">
-					</div>
+					<b-select placeholder="X Coordinate">
+						<option v-for="coord in xCoordsArr" :key="coord">
+							{{ coord }}
+						</option>
+					</b-select>
 				</div>
 				<div class="field">
 					<label class="label">{{ ycoords }}</label>
 					<div class="control">
-						<input class="input" type="number" min="1" max="10" maxlength="2">
+						<input class="input" type="number" placeholder="Y Coordinate" min="1" max="10" maxlength="2">
 					</div>
 				</div>
 			</div>
@@ -135,6 +149,7 @@ export default {
 		return {
 			xcoords: 'X (A-J)',
 			ycoords: 'Y (1-10)',
+			xCoordsArr: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'],
 			aircraftInitCoord: '',
 			aircraftFinalCoord: '',
 			battleshipInitCoord: '',
