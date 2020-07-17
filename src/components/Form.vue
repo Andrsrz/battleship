@@ -1,18 +1,18 @@
 <template>
-	<form class="form">
+	<div class="form">
 		<div class="field">
 			<label class="label">Aircraft (5 spaces)</label>
 			<div class="coord-container">
 				<div class="field">
 					<label class="label">{{ initCoords }}</label>
 					<div class="control">
-						<input class="input" type="text" maxlength="3">
+						<input class="input" type="text" maxlength="3" v-model="aircraftInitCoord">
 					</div>
 				</div>
 				<div class="field">
 					<label class="label">{{ finalCoords }}</label>
 					<div class="control">
-						<input class="input" type="text" maxlength="3">
+						<input class="input" type="text" maxlength="3" v-model="aircraftFinalCoord">
 					</div>
 				</div>
 			</div>
@@ -23,13 +23,13 @@
 				<div class="field">
 					<label class="label">{{ initCoords }}</label>
 					<div class="control">
-						<input class="input" type="text" maxlength="3">
+						<input class="input" type="text" maxlength="3" v-model="battleshipInitCoord">
 					</div>
 				</div>
 				<div class="field">
 					<label class="label">{{ finalCoords }}</label>
 					<div class="control">
-						<input class="input" type="text" maxlength="3">
+						<input class="input" type="text" maxlength="3" v-model="battleshipFinalCoord">
 					</div>
 				</div>
 			</div>
@@ -40,13 +40,13 @@
 				<div class="field">
 					<label class="label">{{ initCoords }}</label>
 					<div class="control">
-						<input class="input" type="text" maxlength="3">
+						<input class="input" type="text" maxlength="3" v-model="cruiserInitCoord">
 					</div>
 				</div>
 				<div class="field">
 					<label class="label">{{ finalCoords }}</label>
 					<div class="control">
-						<input class="input" type="text" maxlength="3">
+						<input class="input" type="text" maxlength="3" v-model="cruiserFinalCoord">
 					</div>
 				</div>
 			</div>
@@ -57,13 +57,13 @@
 				<div class="field">
 					<label class="label">{{ initCoords }}</label>
 					<div class="control">
-						<input class="input" type="text" maxlength="3">
+						<input class="input" type="text" maxlength="3" v-model="destroyer1InitCoord">
 					</div>
 				</div>
 				<div class="field">
 					<label class="label">{{ finalCoords }}</label>
 					<div class="control">
-						<input class="input" type="text" maxlength="3">
+						<input class="input" type="text" maxlength="3" v-model="destroyer1FinalCoord">
 					</div>
 				</div>
 			</div>
@@ -74,13 +74,13 @@
 				<div class="field">
 					<label class="label">{{ initCoords }}</label>
 					<div class="control">
-						<input class="input" type="text" maxlength="3">
+						<input class="input" type="text" maxlength="3" v-model="destroyer2InitCoord">
 					</div>
 				</div>
 				<div class="field">
 					<label class="label">{{ finalCoords }}</label>
 					<div class="control">
-						<input class="input" type="text" maxlength="3">
+						<input class="input" type="text" maxlength="3" v-model="destroyer2FinalCoord">
 					</div>
 				</div>
 			</div>
@@ -91,13 +91,13 @@
 				<div class="field">
 					<label class="label">{{ initCoords }}</label>
 					<div class="control">
-						<input class="input" type="text" maxlength="3">
+						<input class="input" type="text" maxlength="3" v-model="submarine1InitCoord">
 					</div>
 				</div>
 				<div class="field">
 					<label class="label">{{ finalCoords }}</label>
 					<div class="control">
-						<input class="input" type="text" maxlength="3">
+						<input class="input" type="text" maxlength="3" v-model="submarine1FinalCoord">
 					</div>
 				</div>
 			</div>
@@ -108,21 +108,21 @@
 				<div class="field">
 					<label class="label">{{ initCoords }}</label>
 					<div class="control">
-						<input class="input" type="text" maxlength="3">
+						<input class="input" type="text" maxlength="3" v-model="submarine2InitCoord">
 					</div>
 				</div>
 				<div class="field">
 					<label class="label">{{ finalCoords }}</label>
 					<div class="control">
-						<input class="input" type="text" maxlength="3">
+						<input class="input" type="text" maxlength="3" v-model="submarine2FinalCoord">
 					</div>
 				</div>
 			</div>
 		</div>
 		<div class="control btn">
-			<button class="button is-primary">Submit</button>
+			<button class="button is-primary" @click="startGame()">Submit</button>
 		</div>
-	</form>
+	</div>
 </template>
 
 <script>
@@ -152,6 +152,25 @@ export default {
 		}
 	},
 	methods: {
+		startGame(){
+			if(this.aircraftInitCoord === "" ||
+			this.aircraftFinalCoord === "" ||
+			this.battleshipInitCoord === "" ||
+			this.battleshipFinalCoord === "" ||
+			this.cruiserInitCoord === "" ||
+			this.cruiserFinalCoord === "" ||
+			this.destroyer1InitCoord === "" ||
+			this.destroyer1FinalCoord === "" ||
+			this.destroyer2InitCoord === "" ||
+			this.destroyer2FinalCoord === "" ||
+			this.submarine1InitCoord === "" ||
+			this.submarine1FinalCoord === "" ||
+			this.submarine2InitCoord === "" ||
+			this.submarine2FinalCoord === "")
+				alert("Enter all the coordinates");
+			else
+				alert("Game Start!");
+		}
 	}
 }
 </script>
