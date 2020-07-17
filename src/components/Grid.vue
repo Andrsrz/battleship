@@ -1,10 +1,14 @@
 <template>
 	<div class="grid-container">
 		<div class="myGrid" >
-			<div class="cell" v-for="coord in this.gameboard.boardArray" :key="coord">
+			<div class="cell"
+					v-for="(coord, index) in this.gameboard.boardArray"
+					:key="index"
+					@click="sayCoord(coord)">
 				{{ coord }}
 			</div>
 		</div>
+		{{ coord }}
 	</div>
 </template>
 
@@ -15,9 +19,15 @@ export default {
 		gameboard: Object
 	},
 	data(){
-		return{}
+		return{
+			coord: ''
+		}
 	},
-	methods: {}
+	methods: {
+		sayCoord(coord){
+			this.coord = coord;
+		}
+	}
 }
 </script>
 
@@ -29,6 +39,7 @@ export default {
 }
 
 .cell {
+	cursor: pointer;
 	border: 1px solid black;
 }
 </style>
