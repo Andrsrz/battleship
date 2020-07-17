@@ -30,6 +30,17 @@ export default {
 				this.coord = 'Please enter your ships first!';
 			else
 				this.coord = coord;
+		},
+		renderShips(){
+			this.isdisabled = false;
+		}
+	},
+	watch: {
+		gameboard: {
+			deep: true,
+			handler(){
+				this.renderShips();
+			}
 		}
 	}
 }
