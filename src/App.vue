@@ -3,9 +3,9 @@
 		<Form :gameboard="this.player.gameboard"/>
 		<br>
 		<div id="grids">
-			<Grid :gameboard="this.player.gameboard"/>
+			<Grid :gameboard="this.player.gameboard" :isdisabled="this.playerGrid"/>
 			<br>
-			<Grid :gameboard="this.cpu.gameboard"/>
+			<Grid :gameboard="this.cpu.gameboard" :isdisabled="this.cpuGrid"/>
 		</div>
 	</div>
 </template>
@@ -26,7 +26,9 @@ export default {
 	data() {
 		return {
 			player: new Player(),
-			cpu: new Player()
+			cpu: new Player(),
+			playerGrid: true,
+			cpuGrid: false
 		}
 	}
 }

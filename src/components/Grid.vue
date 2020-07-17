@@ -4,7 +4,7 @@
 			<div class="cell"
 					v-for="(coord, index) in this.gameboard.boardArray"
 					:key="index"
-					@click="sayCoord(coord)">
+					@click="hit(coord)">
 				{{ coord }}
 			</div>
 		</div>
@@ -16,7 +16,8 @@
 export default {
 	name: 'Grid',
 	props: {
-		gameboard: Object
+		gameboard: Object,
+		isdisabled: Boolean
 	},
 	data(){
 		return{
@@ -24,8 +25,11 @@ export default {
 		}
 	},
 	methods: {
-		sayCoord(coord){
-			this.coord = coord;
+		hit(coord){
+			if(this.isdisabled)
+				this.coord = 'Please enter your ships first!';
+			else
+				this.coord = coord;
 		}
 	}
 }

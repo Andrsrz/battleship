@@ -4,17 +4,15 @@
 			<label class="label">Aircraft (5 spaces)</label>
 			<div class="coord-container">
 				<div class="field">
-					<label class="label">{{ xcoords }}</label>
-					<b-select placeholder="X Coordinate">
-						<option v-for="coord in xCoordsArr" :key="coord">
-							{{ coord }}
-						</option>
-					</b-select>
+					<label class="label">{{ initCoords }}</label>
+					<div class="control">
+						<input class="input" type="text" maxlength="3">
+					</div>
 				</div>
 				<div class="field">
-					<label class="label">{{ ycoords }}</label>
+					<label class="label">{{ finalCoords }}</label>
 					<div class="control">
-						<input class="input" type="number" placeholder="Y Coordinate" min="1" max="10" maxlength="2">
+						<input class="input" type="text" maxlength="3">
 					</div>
 				</div>
 			</div>
@@ -23,17 +21,15 @@
 			<label class="label">Battleship (4 spaces)</label>
 			<div class="coord-container">
 				<div class="field">
-					<label class="label">{{ xcoords }}</label>
-					<b-select placeholder="X Coordinate">
-						<option v-for="coord in xCoordsArr" :key="coord">
-							{{ coord }}
-						</option>
-					</b-select>
+					<label class="label">{{ initCoords }}</label>
+					<div class="control">
+						<input class="input" type="text" maxlength="3">
+					</div>
 				</div>
 				<div class="field">
-					<label class="label">{{ ycoords }}</label>
+					<label class="label">{{ finalCoords }}</label>
 					<div class="control">
-						<input class="input" type="number" placeholder="Y Coordinate" min="1" max="10" maxlength="2">
+						<input class="input" type="text" maxlength="3">
 					</div>
 				</div>
 			</div>
@@ -42,17 +38,15 @@
 			<label class="label">Cruiser (3 spaces)</label>
 			<div class="coord-container">
 				<div class="field">
-					<label class="label">{{ xcoords }}</label>
-					<b-select placeholder="X Coordinate">
-						<option v-for="coord in xCoordsArr" :key="coord">
-							{{ coord }}
-						</option>
-					</b-select>
+					<label class="label">{{ initCoords }}</label>
+					<div class="control">
+						<input class="input" type="text" maxlength="3">
+					</div>
 				</div>
 				<div class="field">
-					<label class="label">{{ ycoords }}</label>
+					<label class="label">{{ finalCoords }}</label>
 					<div class="control">
-						<input class="input" type="number" placeholder="Y Coordinate" min="1" max="10" maxlength="2">
+						<input class="input" type="text" maxlength="3">
 					</div>
 				</div>
 			</div>
@@ -61,17 +55,15 @@
 			<label class="label">Destroyer (2 spaces)</label>
 			<div class="coord-container">
 				<div class="field">
-					<label class="label">{{ xcoords }}</label>
-					<b-select placeholder="X Coordinate">
-						<option v-for="coord in xCoordsArr" :key="coord">
-							{{ coord }}
-						</option>
-					</b-select>
+					<label class="label">{{ initCoords }}</label>
+					<div class="control">
+						<input class="input" type="text" maxlength="3">
+					</div>
 				</div>
 				<div class="field">
-					<label class="label">{{ ycoords }}</label>
+					<label class="label">{{ finalCoords }}</label>
 					<div class="control">
-						<input class="input" type="number" placeholder="Y Coordinate" min="1" max="10" maxlength="2">
+						<input class="input" type="text" maxlength="3">
 					</div>
 				</div>
 			</div>
@@ -80,17 +72,15 @@
 			<label class="label">Destroyer (2 spaces)</label>
 			<div class="coord-container">
 				<div class="field">
-					<label class="label">{{ xcoords }}</label>
-					<b-select placeholder="X Coordinate">
-						<option v-for="coord in xCoordsArr" :key="coord">
-							{{ coord }}
-						</option>
-					</b-select>
+					<label class="label">{{ initCoords }}</label>
+					<div class="control">
+						<input class="input" type="text" maxlength="3">
+					</div>
 				</div>
 				<div class="field">
-					<label class="label">{{ ycoords }}</label>
+					<label class="label">{{ finalCoords }}</label>
 					<div class="control">
-						<input class="input" type="number" placeholder="Y Coordinate" min="1" max="10" maxlength="2">
+						<input class="input" type="text" maxlength="3">
 					</div>
 				</div>
 			</div>
@@ -99,17 +89,15 @@
 			<label class="label">Submarine (1 space)</label>
 			<div class="coord-container">
 				<div class="field">
-					<label class="label">{{ xcoords }}</label>
-					<b-select placeholder="X Coordinate">
-						<option v-for="coord in xCoordsArr" :key="coord">
-							{{ coord }}
-						</option>
-					</b-select>
+					<label class="label">{{ initCoords }}</label>
+					<div class="control">
+						<input class="input" type="text" maxlength="3">
+					</div>
 				</div>
 				<div class="field">
-					<label class="label">{{ ycoords }}</label>
+					<label class="label">{{ finalCoords }}</label>
 					<div class="control">
-						<input class="input" type="number" placeholder="Y Coordinate" min="1" max="10" maxlength="2">
+						<input class="input" type="text" maxlength="3">
 					</div>
 				</div>
 			</div>
@@ -118,17 +106,15 @@
 			<label class="label">Submarine (1 space)</label>
 			<div class="coord-container">
 				<div class="field">
-					<label class="label">{{ xcoords }}</label>
-					<b-select placeholder="X Coordinate">
-						<option v-for="coord in xCoordsArr" :key="coord">
-							{{ coord }}
-						</option>
-					</b-select>
+					<label class="label">{{ initCoords }}</label>
+					<div class="control">
+						<input class="input" type="text" maxlength="3">
+					</div>
 				</div>
 				<div class="field">
-					<label class="label">{{ ycoords }}</label>
+					<label class="label">{{ finalCoords }}</label>
 					<div class="control">
-						<input class="input" type="number" placeholder="Y Coordinate" min="1" max="10" maxlength="2">
+						<input class="input" type="text" maxlength="3">
 					</div>
 				</div>
 			</div>
@@ -147,9 +133,8 @@ export default {
 	},
 	data(){
 		return {
-			xcoords: 'X (A-J)',
-			ycoords: 'Y (1-10)',
-			xCoordsArr: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'],
+			initCoords: 'Initial Coordinates',
+			finalCoords: 'Final Coordinates',
 			aircraftInitCoord: '',
 			aircraftFinalCoord: '',
 			battleshipInitCoord: '',
