@@ -1,19 +1,27 @@
 <template>
 	<div id="app">
 		<Form :gameboard="this.player.gameboard"/>
+		<br>
+		<div id="grids">
+			<Grid :gameboard="this.player.gameboard"/>
+			<br>
+			<Grid :gameboard="this.cpu.gameboard"/>
+		</div>
 	</div>
 </template>
 
 <script>
 /* Components */
 import Form from './components/Form.vue';
+import Grid from './components/Grid.vue';
 /* Classes */
 import Player from './classes/player';
 
 export default {
 	name: 'App',
 	components: {
-		Form
+		Form,
+		Grid
 	},
 	data() {
 		return {
@@ -27,6 +35,9 @@ export default {
 
 <style lang="scss">
 #app {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
 	font-family: Avenir, Helvetica, Arial, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -35,11 +46,17 @@ export default {
 	margin-top: 60px;
 }
 
+#grids {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-around;
+}
+
 // Import Bulma's core
 @import "~bulma/sass/utilities/_all";
 
 // Set your colors
-$primary: #92A8D1;
+$primary: #6B5B95;
 $primary-invert: findColorInvert($primary);
 $twitter: #4099FF;
 $twitter-invert: findColorInvert($twitter);
