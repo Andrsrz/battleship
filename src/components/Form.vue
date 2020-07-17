@@ -166,8 +166,6 @@ export default {
 			submarine2FinalCoord: ''
 		}
 	},
-	watch: {
-	},
 	methods: {
 	}
 }
