@@ -72,7 +72,7 @@ export default class Ship{
 				this.position.push(letter + initNum);
 			}
 		}else{
-			return 'Error';
+			return false;
 		}
 
 		return this.position;

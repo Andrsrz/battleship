@@ -55,6 +55,6 @@ describe("fillPosition", () => {
 	});
 
 	test("Position not filled correctly (checking valid ship size and direction)", () => {
-		expect(Battleship.fillPosition('C3', 'E3')).toMatch('Error');
+		expect(Battleship.fillPosition('C3', 'E3')).toBeFalsy();
 	});
 });
