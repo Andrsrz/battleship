@@ -36,7 +36,7 @@ export default {
 				this.message = coord;
 
 			// Hit
-			console.log(event.target);
+			console.log(event.target.id);
 		},
 		renderShips(){
 			this.isdisabled = false;
@@ -51,6 +51,8 @@ export default {
 		}
 	},
 	watch: {
+		/* When the user prompt all the coordinates we check that our
+		/* gameboard has changed and render the ships. */
 		gameboard: {
 			deep: true,
 			handler(){
