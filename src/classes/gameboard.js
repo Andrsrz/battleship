@@ -62,6 +62,16 @@ export default class Gameboard{
 		return '/';
 	}
 
+	shipsCoordinates(){
+		let theShipCoordinates = [];
+		this.ships.forEach(ship => {
+			ship.position.forEach(coordinate => {
+				theShipCoordinates.push(coordinate);
+			});
+		});
+		return theShipCoordinates;
+	}
+
 	_getBoardArray(){
 		let boardArray = [];
 		for(let row = 0; row < this.board.length; row++){
