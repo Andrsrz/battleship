@@ -28,10 +28,10 @@ export default {
 	},
 	methods: {
 		hit(coord){
-			if(this.who === 'player')
-				this.coord = 'This is not your grid!';
-			else if(this.isdisabled && this.who === 'cpu')
+			if(this.isdisabled && (this.who === 'cpu' || this.who === 'player'))
 				this.coord = 'Please enter your ships first!';
+			else if(this.who === 'player')
+				this.coord = "You shouldn't shoot your own ships!";
 			else
 				this.coord = coord;
 		},
