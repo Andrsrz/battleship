@@ -4,10 +4,10 @@
 		<br>
 		<div id="grids">
 			<h1 class="is-size-3 has-text-primary">Your Grid</h1>
-			<Grid :gameboard="this.player.gameboard" :isdisabled="this.playerGrid"/>
+			<Grid :gameboard="this.player.gameboard" :isdisabled="this.playerGrid" :who="'player'"/>
 			<br>
 			<h1 class="is-size-3 has-text-danger">Enemy Grid</h1>
-			<Grid :gameboard="this.cpu.gameboard" :isdisabled="this.cpuGrid"/>
+			<Grid :gameboard="this.cpu.gameboard" :isdisabled="this.cpuGrid" :who="'cpu'"/>
 		</div>
 	</div>
 </template>
@@ -30,7 +30,7 @@ export default {
 			player: new Player(),
 			cpu: new Player(),
 			playerGrid: true,
-			cpuGrid: false
+			cpuGrid: true
 		}
 	}
 }

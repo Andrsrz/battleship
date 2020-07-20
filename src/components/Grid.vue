@@ -18,7 +18,8 @@ export default {
 	name: 'Grid',
 	props: {
 		gameboard: Object,
-		isdisabled: Boolean
+		isdisabled: Boolean,
+		who: String
 	},
 	data(){
 		return{
@@ -27,7 +28,9 @@ export default {
 	},
 	methods: {
 		hit(coord){
-			if(this.isdisabled)
+			if(this.who === 'player')
+				this.coord = 'This is not your grid!';
+			else if(this.isdisabled && this.who === 'cpu')
 				this.coord = 'Please enter your ships first!';
 			else
 				this.coord = coord;
