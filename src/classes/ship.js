@@ -20,9 +20,11 @@ export default class Ship{
 	/* To track is the ship is no longer in the game. */
 	isSunk(){
 		if(this.size === this.hits.length)
-			return true;
+			this.sunk = true;
 		else
-			return false;
+			this.sunk = false;
+
+		return this.sunk;
 	}
 
 	/* The user may put random position so we need to validate them.

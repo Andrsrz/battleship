@@ -52,6 +52,8 @@ export default class Gameboard{
 			for(let coord = 0; coord < this.ships[shipIter].position.length; coord++){
 				if(coordinates === this.ships[shipIter].position[coord]){
 					/* Track hits */
+					/* Forgot to called the damn hit method on the ship */
+					this.ships[shipIter].hit(coordinates);
 					this.hits.push(coordinates);
 					return 'X';
 				}
