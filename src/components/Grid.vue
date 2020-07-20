@@ -30,14 +30,22 @@ export default {
 	methods: {
 		hit(coord, event){
 			if(this.isDisabled && (this.who === 'cpu' || this.who === 'player')){
-				this.message = 'Please enter your ships first!';
+				alert('Please enter your ships first!');
 			}else if(this.who === 'player'){
-				this.message = "You shouldn't shoot your own ships!";
+				alert("You shouldn't shoot your own ships!");
 			}else{
-				event.target.innerText = this.gameboard.receiveAttack(event.target.id);
-				this.message = coord;
+				/* We check if all ships are sunk */
+				if(this.gameboard.allSunk()){
+					alert('Game Over!');
+					this.clearGrid();
+					this.$root.$emit('message from grid');
+				}else{
+					console.log("brbrbr");
+					event.target.innerText = this.gameboard.receiveAttack(event.target.id);
+					event.target.className += " disabled";
+					this.message = this.gameboard.hits;
+				}
 			}
-			console.log(event.target);
 		},
 		renderShips(){
 			this.isDisabled = false;
@@ -46,7 +54,16 @@ export default {
 			/* was placed. */
 			this.gameboard.ships.forEach(ship => {
 				ship.position.forEach(coordinate => {
-					this.$refs[coordinate][0].className += " shipCell";
+					this.$refs[coordinate][0].className += ( this.who === 'player' ? " playerCell" : " enemyCell");
+				});
+			});
+		},
+		clearGrid(){
+			this.isDisabled = true;
+			this.gameboard.ships.forEach(ship => {
+				ship.position.forEach(coordinate => {
+					ship.position.pop();
+					this.$refs[coordinate][0].className = "cell";
 				});
 			});
 		}
@@ -57,7 +74,7 @@ export default {
 		gameboard: {
 			deep: true,
 			handler(){
-				this.shipsCoords = this.gameboard.shipsCoordinates;
+				this.shipsCoords = this.gameboard.shipsCoordinates();
 				this.renderShips();
 			}
 		}
@@ -77,8 +94,17 @@ export default {
 	border: 1px solid black;
 }
 
-.shipCell {
+.playerCell {
 	background-color: #6B5B95;
 	color: #FFF;
+}
+
+.enemyCell {
+	background-color: #FF3F66;
+	color: #FFF;
+}
+
+.disabled {
+	pointer-events: none;
 }
 </style>

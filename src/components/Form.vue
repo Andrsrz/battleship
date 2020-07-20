@@ -187,6 +187,11 @@ export default {
 				this.formDisplay = "none";
 			}
 		}
+	},
+	mounted(){
+		this.$root.$on('message from grid', () => {
+			this.formDisplay = 'block';
+		});
 	}
 }
 </script>
