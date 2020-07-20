@@ -1,6 +1,5 @@
 <template>
 	<div class="grid-container">
-		{{ message }}
 		<div class="myGrid" >
 			<div class="cell"
 					v-for="(coord, index) in this.gameboard.boardArray"
@@ -22,7 +21,6 @@ export default {
 	},
 	data(){
 		return{
-			message: '',
 			isDisabled: true,
 			shipsCoords: []
 		}
@@ -41,7 +39,6 @@ export default {
 				}else{
 					event.target.innerText = this.gameboard.receiveAttack(event.target.id);
 					event.target.className += " disabled";
-					this.message = this.gameboard.hits;
 				}
 			}
 		},
