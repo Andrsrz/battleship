@@ -1,5 +1,5 @@
 <template>
-	<div class="form">
+	<div class="form" :style="{ display: formDisplay }">
 		<div class="field">
 			<label class="label">Aircraft (5 spaces)</label>
 			<div class="coord-container">
@@ -121,6 +121,7 @@ export default {
 	},
 	data(){
 		return {
+			formDisplay: 'block',
 			initCoords: 'Initial Coordinates',
 			finalCoords: 'Final Coordinates',
 			coords: 'Coordinate',
@@ -175,6 +176,7 @@ export default {
 				this.destroyer2FinalCoord = "";
 				this.submarine1Coord = "";
 				this.submarine2Coord = "";
+				this.formDisplay = "none";
 			}
 		}
 	}
