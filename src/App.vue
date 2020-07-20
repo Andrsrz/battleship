@@ -3,10 +3,10 @@
 		<Form :gameboard="this.player.gameboard"/>
 		<br>
 		<div id="grids">
-			<h1 class="is-size-3 has-text-primary">Your Grid</h1>
+			<h1 class="is-size-4 has-text-primary">Your Grid</h1>
 			<Grid :gameboard="this.player.gameboard" :isdisabled="this.playerGrid" :who="'player'"/>
 			<br>
-			<h1 class="is-size-3 has-text-danger">Enemy Grid</h1>
+			<h1 class="is-size-4 has-text-danger">Enemy Grid</h1>
 			<Grid :gameboard="this.cpu.gameboard" :isdisabled="this.cpuGrid" :who="'cpu'"/>
 		</div>
 	</div>

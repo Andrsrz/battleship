@@ -1,5 +1,6 @@
 <template>
 	<div class="grid-container">
+		{{ message }}
 		<div class="myGrid" >
 			<div class="cell"
 					v-for="(coord, index) in this.gameboard.boardArray"
@@ -9,7 +10,6 @@
 				{{ coord }}
 			</div>
 		</div>
-		{{ coord }}
 	</div>
 </template>
 
@@ -23,17 +23,17 @@ export default {
 	},
 	data(){
 		return{
-			coord: ''
+			message: ''
 		}
 	},
 	methods: {
 		hit(coord){
 			if(this.isdisabled && (this.who === 'cpu' || this.who === 'player'))
-				this.coord = 'Please enter your ships first!';
+				this.message = 'Please enter your ships first!';
 			else if(this.who === 'player')
-				this.coord = "You shouldn't shoot your own ships!";
+				this.message = "You shouldn't shoot your own ships!";
 			else
-				this.coord = coord;
+				this.message = coord;
 		},
 		renderShips(){
 			this.isdisabled = false;
