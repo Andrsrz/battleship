@@ -89,15 +89,9 @@
 			<label class="label">Submarine (1 space)</label>
 			<div class="coord-container">
 				<div class="field">
-					<label class="label">{{ initCoords }}</label>
+					<label class="label">{{ coords }}</label>
 					<div class="control">
-						<input class="input" type="text" maxlength="3" v-model="submarine1InitCoord">
-					</div>
-				</div>
-				<div class="field">
-					<label class="label">{{ finalCoords }}</label>
-					<div class="control">
-						<input class="input" type="text" maxlength="3" v-model="submarine1FinalCoord">
+						<input class="input" type="text" maxlength="3" v-model="submarine1Coord">
 					</div>
 				</div>
 			</div>
@@ -106,15 +100,9 @@
 			<label class="label">Submarine (1 space)</label>
 			<div class="coord-container">
 				<div class="field">
-					<label class="label">{{ initCoords }}</label>
+					<label class="label">{{ coords }}</label>
 					<div class="control">
-						<input class="input" type="text" maxlength="3" v-model="submarine2InitCoord">
-					</div>
-				</div>
-				<div class="field">
-					<label class="label">{{ finalCoords }}</label>
-					<div class="control">
-						<input class="input" type="text" maxlength="3" v-model="submarine2FinalCoord">
+						<input class="input" type="text" maxlength="3" v-model="submarine2Coord">
 					</div>
 				</div>
 			</div>
@@ -135,6 +123,7 @@ export default {
 		return {
 			initCoords: 'Initial Coordinates',
 			finalCoords: 'Final Coordinates',
+			coords: 'Coordinate',
 			aircraftInitCoord: '',
 			aircraftFinalCoord: '',
 			battleshipInitCoord: '',
@@ -145,10 +134,8 @@ export default {
 			destroyer1FinalCoord: '',
 			destroyer2InitCoord: '',
 			destroyer2FinalCoord: '',
-			submarine1InitCoord: '',
-			submarine1FinalCoord: '',
-			submarine2InitCoord: '',
-			submarine2FinalCoord: ''
+			submarine1Coord: '',
+			submarine2Coord: ''
 		}
 	},
 	methods: {
@@ -163,18 +150,16 @@ export default {
 			this.destroyer1FinalCoord === "" ||
 			this.destroyer2InitCoord === "" ||
 			this.destroyer2FinalCoord === "" ||
-			this.submarine1InitCoord === "" ||
-			this.submarine1FinalCoord === "" ||
-			this.submarine2InitCoord === "" ||
-			this.submarine2FinalCoord === ""){
+			this.submarine1Coord === "" ||
+			this.submarine2Coord === ""){
 				alert("Enter all the coordinates");
 			}else if(!this.gameboard.aircraft.fillPosition(this.aircraftInitCoord, this.aircraftFinalCoord) ||
 				!this.gameboard.battleship.fillPosition(this.battleshipInitCoord, this.battleshipFinalCoord) ||
 				!this.gameboard.cruiser.fillPosition(this.cruiserInitCoord, this.cruiserFinalCoord) ||
 				!this.gameboard.destroyer1.fillPosition(this.destroyer1InitCoord, this.destroyer1FinalCoord) ||
 				!this.gameboard.destroyer2.fillPosition(this.destroyer2InitCoord, this.destroyer2FinalCoord) ||
-				!this.gameboard.submarine1.fillPosition(this.submarine1InitCoord, this.submarine1FinalCoord) ||
-				!this.gameboard.submarine2.fillPosition(this.submarine2InitCoord, this.submarine2FinalCoord)){
+				!this.gameboard.submarine1.fillPosition(this.submarine1Coord, this.submarine1Coord) ||
+				!this.gameboard.submarine2.fillPosition(this.submarine2Coord, this.submarine2Coord)){
 				alert("Please check that the coordinates are valid\nonly horizontal and vertical directions");
 			}else{
 				/* Success. Clear inputs */
@@ -188,10 +173,8 @@ export default {
 				this.destroyer1FinalCoord = "";
 				this.destroyer2InitCoord = "";
 				this.destroyer2FinalCoord = "";
-				this.submarine1InitCoord = "";
-				this.submarine1FinalCoord = "";
-				this.submarine2InitCoord = "";
-				this.submarine2FinalCoord = "";
+				this.submarine1Coord = "";
+				this.submarine2Coord = "";
 			}
 		}
 	}
