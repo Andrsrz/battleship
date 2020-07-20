@@ -5,8 +5,8 @@
 			<div class="cell"
 					v-for="(coord, index) in this.gameboard.boardArray"
 					:key="index"
-					@click="hit(coord)"
-					:id="coord">
+					@click="hit(coord, $event)"
+					:id="coord" :ref="coord">
 				{{ coord }}
 			</div>
 		</div>
@@ -27,16 +27,27 @@ export default {
 		}
 	},
 	methods: {
-		hit(coord){
+		hit(coord, event){
 			if(this.isdisabled && (this.who === 'cpu' || this.who === 'player'))
 				this.message = 'Please enter your ships first!';
 			else if(this.who === 'player')
 				this.message = "You shouldn't shoot your own ships!";
 			else
 				this.message = coord;
+
+			// Hit
+			console.log(event.target);
 		},
 		renderShips(){
 			this.isdisabled = false;
+			/* We loop through the ships and add a class to
+			/* set the background color of the cell where the ship
+			/* was placed. */
+			this.gameboard.ships.forEach(ship => {
+				ship.position.forEach(coordinate => {
+					this.$refs[coordinate][0].className += " shipCell";
+				});
+			});
 		}
 	},
 	watch: {
@@ -50,7 +61,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .myGrid {
 	display: grid;
 	grid-template-columns: repeat(10, 40px);
@@ -60,5 +71,10 @@ export default {
 .cell {
 	cursor: pointer;
 	border: 1px solid black;
+}
+
+.shipCell {
+	background-color: #6B5B95;
+	color: #FFF;
 }
 </style>
