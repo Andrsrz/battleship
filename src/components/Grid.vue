@@ -36,11 +36,9 @@ export default {
 			}else{
 				/* We check if all ships are sunk */
 				if(this.gameboard.allSunk()){
-					alert('Game Over!');
-					this.clearGrid();
-					this.$root.$emit('message from grid');
+					alert('Game Over');
+					window.location.reload();
 				}else{
-					console.log("brbrbr");
 					event.target.innerText = this.gameboard.receiveAttack(event.target.id);
 					event.target.className += " disabled";
 					this.message = this.gameboard.hits;
@@ -55,15 +53,6 @@ export default {
 			this.gameboard.ships.forEach(ship => {
 				ship.position.forEach(coordinate => {
 					this.$refs[coordinate][0].className += ( this.who === 'player' ? " playerCell" : " enemyCell");
-				});
-			});
-		},
-		clearGrid(){
-			this.isDisabled = true;
-			this.gameboard.ships.forEach(ship => {
-				ship.position.forEach(coordinate => {
-					ship.position.pop();
-					this.$refs[coordinate][0].className = "cell";
 				});
 			});
 		}
