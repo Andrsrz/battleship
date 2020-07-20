@@ -18,28 +18,29 @@ export default {
 	name: 'Grid',
 	props: {
 		gameboard: Object,
-		isdisabled: Boolean,
 		who: String
 	},
 	data(){
 		return{
-			message: ''
+			message: '',
+			isDisabled: true,
+			shipsCoords: []
 		}
 	},
 	methods: {
 		hit(coord, event){
-			if(this.isdisabled && (this.who === 'cpu' || this.who === 'player'))
+			if(this.isDisabled && (this.who === 'cpu' || this.who === 'player')){
 				this.message = 'Please enter your ships first!';
-			else if(this.who === 'player')
+			}else if(this.who === 'player'){
 				this.message = "You shouldn't shoot your own ships!";
-			else
+			}else{
+				event.target.innerText = this.gameboard.receiveAttack(event.target.id);
 				this.message = coord;
-
-			// Hit
-			console.log(event.target.id);
+			}
+			console.log(event.target);
 		},
 		renderShips(){
-			this.isdisabled = false;
+			this.isDisabled = false;
 			/* We loop through the ships and add a class to
 			/* set the background color of the cell where the ship
 			/* was placed. */
@@ -56,6 +57,7 @@ export default {
 		gameboard: {
 			deep: true,
 			handler(){
+				this.shipsCoords = this.gameboard.shipsCoordinates;
 				this.renderShips();
 			}
 		}

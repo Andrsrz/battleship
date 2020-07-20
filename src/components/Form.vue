@@ -117,7 +117,8 @@
 export default {
 	name: 'Form',
 	props: {
-		gameboard: Object
+		gameboard: Object,
+		cpu: Object
 	},
 	data(){
 		return {
@@ -163,6 +164,13 @@ export default {
 				!this.gameboard.submarine2.fillPosition(this.submarine2Coord, this.submarine2Coord)){
 				alert("Please check that the coordinates are valid\nonly horizontal and vertical directions");
 			}else{
+				this.cpu.aircraft.fillPosition(this.aircraftInitCoord, this.aircraftFinalCoord);
+				this.cpu.battleship.fillPosition(this.battleshipInitCoord, this.battleshipFinalCoord);
+				this.cpu.cruiser.fillPosition(this.cruiserInitCoord, this.cruiserFinalCoord);
+				this.cpu.destroyer1.fillPosition(this.destroyer1InitCoord, this.destroyer1FinalCoord);
+				this.cpu.destroyer2.fillPosition(this.destroyer2InitCoord, this.destroyer2FinalCoord);
+				this.cpu.submarine1.fillPosition(this.submarine1Coord, this.submarine1Coord);
+				this.cpu.submarine2.fillPosition(this.submarine2Coord, this.submarine2Coord);
 				/* Success. Clear inputs */
 				this.aircraftInitCoord = "";
 				this.aircraftFinalCoord = "";
