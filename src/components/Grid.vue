@@ -17,7 +17,8 @@ export default {
 	name: 'Grid',
 	props: {
 		gameboard: Object,
-		who: String
+		who: String,
+		turn: Boolean
 	},
 	data(){
 		return{
@@ -29,16 +30,19 @@ export default {
 		hit(coord, event){
 			if(this.isDisabled && (this.who === 'cpu' || this.who === 'player')){
 				alert('Please enter your ships first!');
-			}else if(this.who === 'player'){
-				alert("You shouldn't shoot your own ships!");
 			}else{
+				event.target.innerText = this.gameboard.receiveAttack(event.target.id);
+				event.target.className += " disabled";
+
+				/* Emit signal between the player and the cpu */
+				if(this.who === 'cpu'){
+					this.$root.$emit("player just played, it's cpu turn!");
+				}
+
 				/* We check if all ships are sunk */
 				if(this.gameboard.allSunk()){
 					alert('Game Over');
 					window.location.reload();
-				}else{
-					event.target.innerText = this.gameboard.receiveAttack(event.target.id);
-					event.target.className += " disabled";
 				}
 			}
 		},

@@ -30,6 +30,11 @@ export default {
 			player: new Player(),
 			cpu: new Player()
 		}
+	},
+	mounted(){
+		this.$root.$on("player just played, it's cpu turn!", () => {
+			this.$children[1].$refs['A3'][0].click();
+		});
 	}
 }
 </script>
