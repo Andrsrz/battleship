@@ -1,4 +1,5 @@
 module.exports = {
+	publicPath: '/battleship/',
 	chainWebpack: config => {
 		config
 		.plugin('html')
