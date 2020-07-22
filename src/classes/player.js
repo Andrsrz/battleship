@@ -3,7 +3,7 @@ import Gameboard from './gameboard';
 export default class Player{
 	constructor(){
 		this.gameboard = new Gameboard();
-		this.max = 9;
+		this.max = 10;
 	}
 
 	_getRandomInt(max) {
@@ -24,7 +24,6 @@ export default class Player{
 		for(let i = 0; i < allHits.length; i++){
 			if(coord === allHits[i]){
 				this.cpuTurn();
-				return false;
 			}
 		}
 
