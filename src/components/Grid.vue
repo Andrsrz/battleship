@@ -53,7 +53,7 @@ export default {
 			/* was placed. */
 			this.gameboard.ships.forEach(ship => {
 				ship.position.forEach(coordinate => {
-					this.$refs[coordinate][0].className += ( this.who === 'player' ? " playerCell" : " enemyCell");
+					this.$refs[coordinate][0].className += ( this.who === 'player' ? " playerCell" : "");
 				});
 			});
 		}

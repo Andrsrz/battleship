@@ -33,7 +33,9 @@ export default {
 	},
 	mounted(){
 		this.$root.$on("player just played, it's cpu turn!", () => {
-			this.$children[1].$refs['A3'][0].click();
+			let coord = this.player.cpuTurn();
+			console.log(coord);
+			this.$children[1].$refs[coord][0].click();
 		});
 	}
 }
